@@ -1,0 +1,29 @@
+@{
+    Layout="MasterPageUsuario";
+    ViewBag.Titulo = "Cadastro";
+     <link href="/Css/Cadastro.css" rel="stylesheet">
+}
+               
+
+     <div class="box">
+            <h2>Formulario de cadastro</h2>
+            <form action="/Usuario/Cadastro" method="POST">
+                <div class="inputBox">
+                    <input type="text" name="nome" required="">
+                    <label>Nome</label>
+                </div>
+                <div class="inputBox">
+                        <input type="email" name="email" required="">
+                        <label>E-mail</label>
+                </div>
+                 <div class="inputBox">
+                    <input type="password" name="senha" required="">
+                    <label>Senha</label>
+                </div>
+                <input type="submit" name="" value="Submit">
+            </form>
+            <br>
+            <br>
+            <h2 style="color:white">   @ViewBag.Mensagem   </h2>
+            <a href="/Usuario/Login">Login</a>
+        </div>

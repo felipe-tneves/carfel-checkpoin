@@ -1,0 +1,42 @@
+@using BackFront.Senai.MVC.Models;
+@{
+    Layout= "MasterPageUsuario";
+}
+<h3>Pagina do Administrador</h3>
+
+@TempData["Mensagem"]
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Comentario</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ComentarioModel item in ViewData["Comentarios"] as List<ComentarioModel>)
+        {
+            <tr>
+                <td>
+                    @item.Nome
+                </td>
+                <td>
+                    @item.ComentarioPost
+                </td>
+                <td>
+                    @item.DataPost
+                </td>
+                <td>
+                    @if(item.Status == true ){
+                        <a href="/Comentario/RecusarComentario?id=@item.Id">Recusar</a>
+                        <a href="/Comentario/DeletarComentario?id=@item.Id">Deletar</a>
+                    } else {
+                        <a href="/Comentario/AprovarComentario?id=@item.Id">Aprovar</a>
+                        <a href="/Comentario/DeletarComentario?id=@item.Id">Deletar</a>
+                    } 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

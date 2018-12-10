@@ -1,0 +1,22 @@
+@{
+    Layout="MasterPageUsuario";
+    ViewBag.Titulo = "Login";
+     <link href="/Css/Login.css" rel="stylesheet">
+}
+
+        @ViewBag.Mensagem
+        
+        <div class="box">
+            <h2>Login</h2>
+            <form action="/Usuario/Login" method="POST">
+                <div class="inputBox">
+                    <input type="text" name="email" required="">
+                    <label>Email</label>
+                </div>
+                <div class="inputBox">
+                        <input type="password" name="senha" required="">
+                        <label>Senha</label>
+                </div>
+                <input type="submit" name="" value="Submit">
+            </form>
+        </div>

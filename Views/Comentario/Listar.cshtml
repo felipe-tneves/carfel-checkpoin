@@ -1,0 +1,49 @@
+@using BackFront.Senai.MVC.Models;
+@using Microsoft.AspNetCore.Http;
+
+@{
+    Layout= "MasterPageUsuario";
+}
+<h3>Lista de Comentario em avaliação</h3>
+
+@TempData["Mensagem"]
+
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Data do Post</td>
+            <td>Post</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(ComentarioModel comentario in ViewData["comentario"] as List<ComentarioModel>)
+        {
+            <tr>
+                <td>
+                    @comentario.Nome
+                </td>
+                <td>
+                    @comentario.DataPost
+                </td>
+                <td>
+                    @comentario.ComentarioPost
+                </td>
+                 <td>
+                     @if (Context.Session.GetString("nomeUsuario") == "Admin" )
+                     {                        
+                        @if(comentario.Status == true){
+                            <a href="/Comentario/RecusarComentario?id=@comentario.Id">Recusar</a>
+                        }
+                        else
+                        {
+                            <a href="/Comentario/AprovarComentario?id=@comentario.Id">Aprovar</a>
+                        }
+                     }
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+

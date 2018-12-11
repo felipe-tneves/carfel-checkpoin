@@ -5,38 +5,30 @@
 }
 
 
-@ViewBag.Mensagem
+
 
 <form action="/Comentario/Cadastro" method="POST">
-<html>
-    <body>
-        <div class="container">
-            <div class="front side">
-                <div class="content">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                </div>
-            </div>
-            <div class="back side">
-                <div class="content">
-                    <h1>Comentario</h1>
-                    <form >
-                        <!-- <label >Your Name:</label>
-                        <input type="text" placeholder="Put your username" >
-                        <label >Your E-mail</label>
-                        <input type="email" placeholder="Example@gmail.com"> -->
-                        <label>Digite seu Comentario:</label>
-                        <textarea placeholder="The Subject" name="comentarioPost"></textarea>
-                        <input type="submit" value="Done">
-                             <a href="/Comentario/Listar">Lista de Comentario</a>
-                    </form>
-                </div>
-            </div>
 
+        <div class="box">
+            <h2>Deixe seu Comentario</h2>
+            <br>
+            <br>
+            <form action="/Comentario/Cadastro" method="POST">
+                 <div class="inputBox">
+                    <textarea placeholder="The Subject" name="comentarioPost" cols="40" rows="7"></textarea> 
+                </div>
+                <br>
+                <input type="submit" name="" value="Submit">
+            </form>
+            <br>
+            <br>
+            <h2 style="color:white">   @ViewBag.Mensagem   </h2>
+            <br>
+            <div style=" display: flex;
+                        justify-content: space-around;">
+            <a style="color: Lightblue; font-weight: 400;" href="/Comentario/Listar">Lista de Comentarios</a>
+            <a style="color: Lightblue; font-weight: 400;" href="/Usuario/Login">Sair</a>
+
+            </div>
         </div>
-    </body>
 </html>
-   

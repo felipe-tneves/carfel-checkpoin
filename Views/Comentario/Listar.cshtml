@@ -3,6 +3,7 @@
 
 @{
     Layout= "MasterPageUsuario";
+     <link href="/css/Listar.css" rel="stylesheet">
 }
 <h3>Lista de Comentario em avaliação</h3>
 
@@ -10,23 +11,23 @@
 
 <table>
     <thead>
-        <tr>
-            <td>Nome</td>
-            <td>Data do Post</td>
-            <td>Post</td>
+        <tr style="text-align: lesft">
+            <td width="200">Nome</td>
+            <td width="200">Data do Post</td>
+            <td width="200">Post</td>
         </tr>
     </thead>
     <tbody>
         @foreach(ComentarioModel comentario in ViewData["comentario"] as List<ComentarioModel>)
         {
             <tr>
-                <td>
+                <td width="200">
                     @comentario.Nome
                 </td>
-                <td>
+                <td width="200">
                     @comentario.DataPost
                 </td>
-                <td>
+                <td width="200">
                     @comentario.ComentarioPost
                 </td>
                  <td>
@@ -40,6 +41,7 @@
                             <a href="/Comentario/AprovarComentario?id=@comentario.Id">Aprovar</a>
                         }
                      }
+                     <a href="../Usuario/Login">Sair</a>
                 </td>
             </tr>
         }

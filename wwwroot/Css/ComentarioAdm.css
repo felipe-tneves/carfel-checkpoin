@@ -1,0 +1,20 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: url('../img/autumn-colors-autumn-colours-autumn-leaves-1563356.jpg');
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+h3{
+    background-color: white;
+    opacity: .7;
+    text-align: center;
+}
+table{
+    background-color: white;
+    opacity: .9;
+    margin: auto;
+}
